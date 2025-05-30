@@ -1,0 +1,54 @@
+{
+  "name": "knotie-ai-mcp",
+  "version": "1.0.0",
+  "description": "Model Context Protocol server for Knotie AI Pro - enables AI agents to manage customers and voice AI agents programmatically",
+  "type": "module",
+  "bin": {
+    "knotie-ai-mcp": "./build/index.js"
+  },
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "tsc && chmod +x build/index.js",
+    "dev": "tsc && node build/index.js",
+    "start": "node build/index.js",
+    "test": "node build/index.js --test",
+    "setup": "node scripts/setup.js",
+    "postinstall": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "knotie-ai",
+    "voice-ai",
+    "customer-management",
+    "agent-management",
+    "ai-automation"
+  ],
+  "author": "Knotie AI Pro",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/knotie-ai/knotie-ai-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/knotie-ai/knotie-ai-mcp/issues"
+  },
+  "homepage": "https://github.com/knotie-ai/knotie-ai-mcp#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "build",
+    "config",
+    "README.md",
+    "LICENSE"
+  ]
+}
