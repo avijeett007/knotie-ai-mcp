@@ -1,0 +1,6 @@
+Removed the following files as they are not needed for end users:
+- fix-npm-permissions.sh
+- add-to-path.sh
+- update-path-instructions.md
+
+These scripts and instructions are not necessary for users installing via npm. All troubleshooting is now documented in the README.

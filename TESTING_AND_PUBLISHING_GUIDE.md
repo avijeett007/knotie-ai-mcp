@@ -257,7 +257,52 @@ Test each MCP tool individually:
    npm install -g knotie-ai-mcp
    ```
 
-### 4. Post-Publishing Testing
+### 4. Handling Permission Issues
+
+When users install npm packages globally, they may encounter permission errors. Here are solutions that should be documented in the README:
+
+#### Option A: Use npm's prefix flag (Recommended)
+
+```bash
+# Create a directory for global packages
+mkdir -p ~/npm-packages
+
+# Install with custom prefix
+npm install --prefix ~/npm-packages -g knotie-ai-mcp
+
+# Add to your PATH (add this line to your ~/.bashrc or ~/.zshrc)
+export PATH="$HOME/npm-packages/bin:$PATH"
+```
+
+#### Option B: Configure npm to use a different directory
+
+```bash
+# Create directory and configure npm
+mkdir -p ~/.npm-global
+npm config set prefix ~/.npm-global
+
+# Add to your PATH (add this line to your ~/.bashrc or ~/.zshrc)
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+# Then install
+npm install -g knotie-ai-mcp
+```
+
+#### Option C: Use npx (No installation required)
+
+```bash
+# Run directly with npx
+npx knotie-ai-mcp
+```
+
+#### Option D: Fix npm permissions (requires sudo)
+
+```bash
+# If you see an error message about root-owned files in ~/.npm
+sudo chown -R $(whoami) ~/.npm
+```
+
+### 5. Post-Publishing Testing
 
 #### Test NPM Installation
 

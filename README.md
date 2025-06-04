@@ -128,7 +128,7 @@ npm run dev
 # 4. Add to Claude Desktop with full path to build/index.js
 ```
 
-## �🛠️ Installation
+## 🛠️ Installation
 
 ### Option 1: NPM Installation (Recommended)
 
@@ -138,6 +138,44 @@ npm install -g knotie-ai-mcp
 
 # Or install locally
 npm install knotie-ai-mcp
+```
+
+#### Troubleshooting Global Installation
+
+If you encounter permission errors when installing globally, you have several options:
+
+**Option A: Use npm's prefix flag (Recommended)**
+
+```bash
+# Create a directory for global packages
+mkdir -p ~/npm-packages
+
+# Install with custom prefix
+npm install --prefix ~/npm-packages -g knotie-ai-mcp
+
+# Add to your PATH (add this line to your ~/.bashrc or ~/.zshrc)
+export PATH="$HOME/npm-packages/bin:$PATH"
+```
+
+**Option B: Configure npm to use a different directory**
+
+```bash
+# Create directory and configure npm
+mkdir -p ~/.npm-global
+npm config set prefix ~/.npm-global
+
+# Add to your PATH (add this line to your ~/.bashrc or ~/.zshrc)
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+# Then install
+npm install -g knotie-ai-mcp
+```
+
+**Option C: Use npx (No installation required)**
+
+```bash
+# Run directly with npx
+npx knotie-ai-mcp
 ```
 
 ### Option 2: From Source
